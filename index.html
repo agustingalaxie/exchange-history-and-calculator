@@ -31,13 +31,48 @@
             </div>
         </div>
         <div class="row">
-            <div class="col 12 history oculto">
-                <h3>asdasd</h3>
+            <div class="col 12 history hidden">
+                <h3>Please insert the date you want to check</h3>
+                <form>
+                    <input type="date" />
+                    <select name="ratesFrom" id="ratesFrom">
+                        <option value="USD">Dólares</option>
+                        <option value="CAD">Dolar Canadiense</option>
+                        <option value="GBP">Libra británica</option>
+                        <option value="EUR">Euro</option>
+                        <option value="AUD">Dólar australiano</option>
+                        <option value="BRL">Real brasilero</option>
+                        <option value="MXN">Peso mexicano</option>
+                    </select>
+                    <submit type="button">Calcular</submit>
+                </form>
             </div>
         </div>
         <div class="row">
-            <div class="col 12 calculator oculto">
-                <h3>asdasd</h3>
+            <div class="col 12 calculator hidden">
+                <h3>Please insert mount and select the currencies</h3>
+                <form>
+                    <input type="number" placeholder="Monto" />
+                    <select name="ratesFrom" id="ratesFrom">
+                        <option value="USD">Dólares</option>
+                        <option value="CAD">Dolar Canadiense</option>
+                        <option value="GBP">Libra británica</option>
+                        <option value="EUR">Euro</option>
+                        <option value="AUD">Dólar australiano</option>
+                        <option value="BRL">Real brasilero</option>
+                        <option value="MXN">Peso mexicano</option>
+                    </select>
+                    <select name="ratesTo" id="ratesTo">
+                        <option value="USD">Dólares</option>
+                        <option value="CAD">Dolar Canadiense</option>
+                        <option value="GBP">Libra británica</option>
+                        <option value="EUR">Euro</option>
+                        <option value="AUD">Dólar australiano</option>
+                        <option value="BRL">Real brasilero</option>
+                        <option value="MXN">Peso mexicano</option>
+                    </select>
+                    <submit type="button">Calcular</submit>
+                </form>
             </div>
         </div>
     </div>
