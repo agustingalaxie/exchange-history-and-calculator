@@ -5,10 +5,11 @@ const buttonHist = document.querySelector(".button-hist");
 const intro = document.querySelector(".intro");
 const greet = document.querySelector(".greet");
 const formhist = document.formhist;
+const formcalc = document.formcalc;
 const displayHist = document.querySelector(".displayhist");
 const historyList = document.querySelector(".historylist");
 const containerResponse = document.querySelector(".response");
-const displayResponse = document.querySelector(".displayresponse")
+const displayResponse = document.querySelector(".displayresponse");
 
 historyDiv.onclick = () => {
     const history = document.querySelector(".history");
@@ -34,14 +35,18 @@ calculatorDiv.onclick = () => {
 }
 
 buttonCalc.onclick = () => {
-    console.log("click");
+    const quantity = formcalc.quantity.value;
+    const from = formcalc.ratesFrom.value;
+    const to = formcalc.ratesTo.value;
+    console.log(quantity + from + to);
 }
 
 buttonHist.onclick = () => {
     const dateToCheck = formhist.dateToCheck.value; 
     const baseCurrency = formhist.base.value;
     if(dateToCheck === ""){
-        displayHist.textContent = "Por favor ingrese una fecha válida";
+        displayHist.textContent = "Please select a date";
+        return
     } else {
         displayHist.textContent = "";
         const dateUrl = "https://api.ratesapi.io/api/" + dateToCheck + "?base=" + baseCurrency;
