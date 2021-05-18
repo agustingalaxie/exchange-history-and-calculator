@@ -18,6 +18,15 @@
     border: 1px solid black;
     padding: 2em;
 }
-.oculto{
+.opacity{
+    opacity: 0.5;
+}
+.hidden{
     display: none;
+}
+.history-div:hover{
+    cursor: pointer;
+}
+form{
+    margin: 3em;
 }
