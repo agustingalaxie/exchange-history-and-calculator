@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap');
+:root{
+    --bg-color: #ffe1cd;
+    --font-color: #e77f67;
+}
+
+html {
+    scroll-behavior: smooth;
+  }
+
+.body{
+    background-color: var(--bg-color);
+    height: 100vh;
+}
+.greet, .intro{
+    transition: opacity 0.5s linear, height 1s;
+    opacity: 1;
+    height: 30vh;
+}
+.greet.hidden, .intro.hidden{
+    opacity: 0;
+    transition: opacity 0.5s linear, height 1s;
+    height: 0vh;
+    overflow:hidden;
+}
+.container{
+    height: 80vh;
+    font-family: 'Noto Serif', serif;
+    color: var(--font-color);
+    margin-top: 3em;
+    text-align: center;
+    align-content: center;
+    background-color: #574b90;
+    border-radius: 55px;
+}
+.col{
+    margin-top: 3em;
+    padding: 2em;
+}
+.history, .calculator{
+    height: 60vh;
+}
+.opacity{
+    opacity: 0.5;
+}
+.hidden{
+    height: 0vh;
+    display: none;
+}
+.history-toggle{
+    cursor: pointer;
+    height: 20vh;
+}
+.calculator-toggle{
+    cursor: pointer;
+    height: 20vh;
+}
+.button-calc,.button-hist {
+    padding: 1em;
+    font-size: 1.5em;
+}
+label{
+    margin-bottom: 0.5em;
+}
+form{
+    margin: 1em;
+}
+label, input, select, submit{
+    margin-top: 1em;
+    font-size: 1,5em;
+}
+.response.history{
+    max-height: 55vh;
+    overflow: auto;
+}

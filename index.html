@@ -6,36 +6,29 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Exchange registry and calculator</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/css/main.css'>
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
 </head>
 
 <body class="body">
     <div class="container">
-        <div class="row">
+        <div class="row greet">
             <div class="col">
                 <h1>Greetings!</h1>
             </div>
         </div>
-        <div class="row">
+        <div class="row intro">
             <div class="col">
-                <h3>This is an exchange registry and calculator. Which you want to use?</h3>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col 6 history-div">
-                <h3>History</h3>
-            </div>
-            <div class="col 6 calculator-div">
-                <h3>Calculator</h3>
+                <h3>This is an exchange registry and calculator. Which function you want to use?</h3>
             </div>
         </div>
         <div class="row">
             <div class="col 12 history hidden">
-                <h3>Please insert the date you want to check</h3>
-                <form>
-                    <input type="date" />
-                    <select name="ratesFrom" id="ratesFrom">
+                <form name="formhist">
+                    <label>Please insert the date you want to check</label><br>
+                    <input type="date" name="dateToCheck"/><br>
+                    <label>Select base currency</label><br>
+                    <select name="base" id="baseHist">
                         <option value="USD">Dólares</option>
                         <option value="CAD">Dolar Canadiense</option>
                         <option value="GBP">Libra británica</option>
@@ -43,17 +36,23 @@
                         <option value="AUD">Dólar australiano</option>
                         <option value="BRL">Real brasilero</option>
                         <option value="MXN">Peso mexicano</option>
-                    </select>
-                    <submit type="button">Calcular</submit>
+                    </select><br>
+                    <submit type="button" class="button-hist">Search</submit><br>
                 </form>
+                <h3 class="displayhist"></h3>
+                <div class="response history hidden">
+                <h3 class="displayresponse"></h3>
+                <ul class="historylist"></ul>
+                </div>
             </div>
         </div>
         <div class="row">
             <div class="col 12 calculator hidden">
-                <h3>Please insert mount and select the currencies</h3>
-                <form>
-                    <input type="number" placeholder="Monto" />
-                    <select name="ratesFrom" id="ratesFrom">
+                <form name="formcalc">
+                    <label>Please insert mount and select the currencies</label><br>
+                    <input type="number" placeholder="Monto" /><br>
+                    <label>Select base currency</label><br>
+                    <select name="ratesFrom" id="ratesFrom"><br>
                         <option value="USD">Dólares</option>
                         <option value="CAD">Dolar Canadiense</option>
                         <option value="GBP">Libra británica</option>
@@ -61,7 +60,7 @@
                         <option value="AUD">Dólar australiano</option>
                         <option value="BRL">Real brasilero</option>
                         <option value="MXN">Peso mexicano</option>
-                    </select>
+                    </select><br>
                     <select name="ratesTo" id="ratesTo">
                         <option value="USD">Dólares</option>
                         <option value="CAD">Dolar Canadiense</option>
@@ -70,9 +69,17 @@
                         <option value="AUD">Dólar australiano</option>
                         <option value="BRL">Real brasilero</option>
                         <option value="MXN">Peso mexicano</option>
-                    </select>
-                    <submit type="button">Calcular</submit>
+                    </select><br>
+                    <submit type="button" class="button-calc">Calculate</submit>
                 </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col 6 history-toggle">
+                <h3>History</h3>
+            </div>
+            <div class="col 6 calculator-toggle">
+                <h3>Calculator</h3>
             </div>
         </div>
     </div>
