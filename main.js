@@ -7,6 +7,7 @@ const greet = document.querySelector(".greet");
 const formhist = document.formhist;
 const formcalc = document.formcalc;
 const displayHist = document.querySelector(".displayhist");
+const displayCalc = document.querySelector(".displaycalc");
 const historyList = document.querySelector(".historylist");
 const containerResponse = document.querySelector(".response");
 const displayResponse = document.querySelector(".displayresponse");
@@ -36,9 +37,24 @@ calculatorDiv.onclick = () => {
 
 buttonCalc.onclick = () => {
     const quantity = formcalc.quantity.value;
-    const from = formcalc.ratesFrom.value;
-    const to = formcalc.ratesTo.value;
-    console.log(quantity + from + to);
+    const ratesFromValue = formcalc.ratesFrom.value;
+    const ratesToValue = formcalc.ratesTo.value;
+    if(quantity===""){
+        displayCalc.textContent = "Please insert a value";
+        return
+    } else {
+        displayCalc.textContent = "";
+        const url = "https://api.ratesapi.io/api/latest?base=" + ratesFromValue;
+        fetch(url)
+        .then(response => response.json())
+        .then(responseJSON => {
+            const currencyTo = responseJSON.rates[ratesToValue];
+            const count = quantity * currencyTo;
+            const countcleared = parseFloat(count).toFixed(2)
+            displayCalc.innerText = `${quantity} ${ratesFromValue} are ${countcleared} in ${ratesToValue}`
+            })
+        .catch(error => console.error("falló", error))
+    }
 }
 
 buttonHist.onclick = () => {
