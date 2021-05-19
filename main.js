@@ -51,7 +51,7 @@ buttonCalc.onclick = () => {
             const currencyTo = responseJSON.rates[ratesToValue];
             const count = quantity * currencyTo;
             const countcleared = parseFloat(count).toFixed(2)
-            displayCalc.innerText = `${quantity} ${ratesFromValue} are ${countcleared} in ${ratesToValue}`
+            displayCalc.innerText = `${quantity} ${ratesFromValue} equals to ${countcleared} ${ratesToValue}`
             })
         .catch(error => console.error("falló", error))
     }
